@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pancakes</title>
+</head>
+<body style="background-color:#FFFFFF">
+	<script src="https://code.jquery.com/jquery-1.7.2.js">
+	</script>
+	<style>
+	 .my_text {
+	     font-family:    Courier;
+	     font-weight:    bold;
+	           }
+	    #flavor {
+	      visibility: hidden;
+	    }
+			#like {
+				visibility: hidden;
+			}
+			#dislike {
+				visibility: hidden;
+			}
+	      div#container {
+	       height: 300px;
+	       width: 500px;
+	      }
+
+	      div.a {
+	       width: 200px;
+	       height: 200px;
+	       position: fixed;
+	      }
+
+	      img.a {
+	       width: 200px;
+	       height: 200px;
+	       position: fixed;
+	      }
+
+	      div.b {
+	       width: 200px;
+	       height: 100px;
+	       position: fixed;
+	      }
+
+	      img.b {
+	       width: 200px;
+	       height: 100px;
+	       position: fixed;
+	      }
+
+	      div.c {
+	       width: 200px;
+	       height: 100px;
+	       position: fixed;
+	      }
+
+	      img.c {
+	       width: 200px;
+	       height: 100px;
+	       position: fixed;
+	      }
+
+
+	      .button {
+	       display: inline-block;
+	       padding: 15px 25px;
+	       font-size: 24px;
+	       cursor: pointer;
+	       text-align: center;
+	       text-decoration: none;
+	       outline: none;
+	       color: #fff;
+	       background-color: #3393FF;
+	       border: none;
+	       border-radius: 15px;
+	       box-shadow: 0 9px #999;
+	      }
+				div.body {
+				    background-color:#89cff0
+				    width: 300px;
+				    border: 25px solid white;
+				    padding: 25px;
+				    margin: 25px;
+				    border-top-style: None;
+				    border-right-style: solid;
+				    border-bottom-style: None;
+				    border-left-style: solid;
+				}
+
+	      .button:hover {background-color: #21bbdd}
+
+	      .button:active {
+	       background-color: #21bbdd;
+	       box-shadow: 0 5px #666;
+	       transform: translateY(4px); }
+				 #flyingpancake {
+			 	       width: 200px;
+			 	       height: 100px;
+			 	       position: absolute;
+							 left: 300px;
+							 top: 150px;
+			   -webkit-animation: animation 2000ms linear both;
+			   animation: animation 2000ms linear both;
+			 }
+
+
+ @-webkit-keyframes animation {
+   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }
+   0.2% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -291.32, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -291.32, 0, 0, 1); }
+   0.3% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -286.989, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -286.989, 0, 0, 1); }
+   0.4% { -webkit-transform: matrix3d(2.061, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.834, 0, 0, 1); transform: matrix3d(2.061, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.834, 0, 0, 1); }
+   0.49% { -webkit-transform: matrix3d(2.321, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -278.687, 0, 0, 1); transform: matrix3d(2.321, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -278.687, 0, 0, 1); }
+   0.55% { -webkit-transform: matrix3d(2.255, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -276.198, 0, 0, 1); transform: matrix3d(2.255, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -276.198, 0, 0, 1); }
+   0.65% { -webkit-transform: matrix3d(1.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -271.9, 0, 0, 1); transform: matrix3d(1.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -271.9, 0, 0, 1); }
+   0.68% { -webkit-transform: matrix3d(1.771, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, -270.554, 0, 0, 1); transform: matrix3d(1.771, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, -270.554, 0, 0, 1); }
+   0.87% { -webkit-transform: matrix3d(0.982, 0, 0, 0, 0, 1.333, 0, 0, 0, 0, 1, 0, -262.596, 0, 0, 1); transform: matrix3d(0.982, 0, 0, 0, 0, 1.333, 0, 0, 0, 0, 1, 0, -262.596, 0, 0, 1); }
+   0.94% { -webkit-transform: matrix3d(0.822, 0, 0, 0, 0, 1.398, 0, 0, 0, 0, 1, 0, -259.588, 0, 0, 1); transform: matrix3d(0.822, 0, 0, 0, 0, 1.398, 0, 0, 0, 0, 1, 0, -259.588, 0, 0, 1); }
+   1.06% { -webkit-transform: matrix3d(0.672, 0, 0, 0, 0, 1.469, 0, 0, 0, 0, 1, 0, -254.567, 0, 0, 1); transform: matrix3d(0.672, 0, 0, 0, 0, 1.469, 0, 0, 0, 0, 1, 0, -254.567, 0, 0, 1); }
+   1.23% { -webkit-transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -247.414, 0, 0, 1); transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -247.414, 0, 0, 1); }
+   1.24% { -webkit-transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -246.728, 0, 0, 1); transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, -246.728, 0, 0, 1); }
+   1.73% { -webkit-transform: matrix3d(0.763, 0, 0, 0, 0, 1.338, 0, 0, 0, 0, 1, 0, -226.529, 0, 0, 1); transform: matrix3d(0.763, 0, 0, 0, 0, 1.338, 0, 0, 0, 0, 1, 0, -226.529, 0, 0, 1); }
+   1.99% { -webkit-transform: matrix3d(0.856, 0, 0, 0, 0, 1.211, 0, 0, 0, 0, 1, 0, -215.905, 0, 0, 1); transform: matrix3d(0.856, 0, 0, 0, 0, 1.211, 0, 0, 0, 0, 1, 0, -215.905, 0, 0, 1); }
+   2.23% { -webkit-transform: matrix3d(0.923, 0, 0, 0, 0, 1.114, 0, 0, 0, 0, 1, 0, -206.603, 0, 0, 1); transform: matrix3d(0.923, 0, 0, 0, 0, 1.114, 0, 0, 0, 0, 1, 0, -206.603, 0, 0, 1); }
+   2.73% { -webkit-transform: matrix3d(1.009, 0, 0, 0, 0, 0.987, 0, 0, 0, 0, 1, 0, -187.102, 0, 0, 1); transform: matrix3d(1.009, 0, 0, 0, 0, 0.987, 0, 0, 0, 0, 1, 0, -187.102, 0, 0, 1); }
+   2.74% { -webkit-transform: matrix3d(1.01, 0, 0, 0, 0, 0.986, 0, 0, 0, 0, 1, 0, -186.635, 0, 0, 1); transform: matrix3d(1.01, 0, 0, 0, 0, 0.986, 0, 0, 0, 0, 1, 0, -186.635, 0, 0, 1); }
+   3.23% { -webkit-transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, -168.728, 0, 0, 1); transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, -168.728, 0, 0, 1); }
+   3.3% { -webkit-transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, -166.156, 0, 0, 1); transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, -166.156, 0, 0, 1); }
+   4.2% { -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, -135.218, 0, 0, 1); transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, -135.218, 0, 0, 1); }
+   4.23% { -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, -134.394, 0, 0, 1); transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, -134.394, 0, 0, 1); }
+   5.23% { -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, -103.93, 0, 0, 1); transform: matrix3d(0.998, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, -103.93, 0, 0, 1); }
+   7.23% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -54.871, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -54.871, 0, 0, 1); }
+   8.31% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -34.768, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -34.768, 0, 0, 1); }
+   8.65% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -29.232, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -29.232, 0, 0, 1); }
+   12.51% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 9.646, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 9.646, 0, 0, 1); }
+   16.62% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 18.992, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 18.992, 0, 0, 1); }
+   27.73% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.855, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.855, 0, 0, 1); }
+   38.84% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.76, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.76, 0, 0, 1); }
+   61.06% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.03, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.03, 0, 0, 1); }
+   83.28% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.001, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.001, 0, 0, 1); }
+   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+ }
+
+
+
+ #flyingpancake2 {
+				width: 200px;
+				height: 100px;
+				position: absolute;
+				right: 300px;
+				top: 150px;
+	-webkit-animation: animation2 2000ms linear both;
+	animation: animation2 2000ms linear both;
+}
+
+
+ @-webkit-keyframes animation2 {
+   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 800, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 800, 0, 0, 1); }
+   0.2% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 776.854, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 776.854, 0, 0, 1); }
+   0.3% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 765.303, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 765.303, 0, 0, 1); }
+   0.4% { -webkit-transform: matrix3d(2.061, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 754.223, 0, 0, 1); transform: matrix3d(2.061, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 754.223, 0, 0, 1); }
+   0.49% { -webkit-transform: matrix3d(2.321, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 743.166, 0, 0, 1); transform: matrix3d(2.321, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 743.166, 0, 0, 1); }
+   0.55% { -webkit-transform: matrix3d(2.255, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 736.527, 0, 0, 1); transform: matrix3d(2.255, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 736.527, 0, 0, 1); }
+   0.65% { -webkit-transform: matrix3d(1.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 725.067, 0, 0, 1); transform: matrix3d(1.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 725.067, 0, 0, 1); }
+   0.68% { -webkit-transform: matrix3d(1.771, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, 721.477, 0, 0, 1); transform: matrix3d(1.771, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, 721.477, 0, 0, 1); }
+   0.87% { -webkit-transform: matrix3d(0.982, 0, 0, 0, 0, 1.333, 0, 0, 0, 0, 1, 0, 700.257, 0, 0, 1); transform: matrix3d(0.982, 0, 0, 0, 0, 1.333, 0, 0, 0, 0, 1, 0, 700.257, 0, 0, 1); }
+   0.94% { -webkit-transform: matrix3d(0.822, 0, 0, 0, 0, 1.398, 0, 0, 0, 0, 1, 0, 692.234, 0, 0, 1); transform: matrix3d(0.822, 0, 0, 0, 0, 1.398, 0, 0, 0, 0, 1, 0, 692.234, 0, 0, 1); }
+   1.06% { -webkit-transform: matrix3d(0.672, 0, 0, 0, 0, 1.469, 0, 0, 0, 0, 1, 0, 678.844, 0, 0, 1); transform: matrix3d(0.672, 0, 0, 0, 0, 1.469, 0, 0, 0, 0, 1, 0, 678.844, 0, 0, 1); }
+   1.23% { -webkit-transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, 659.771, 0, 0, 1); transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, 659.771, 0, 0, 1); }
+   1.24% { -webkit-transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, 657.941, 0, 0, 1); transform: matrix3d(0.612, 0, 0, 0, 0, 1.501, 0, 0, 0, 0, 1, 0, 657.941, 0, 0, 1); }
+   1.73% { -webkit-transform: matrix3d(0.763, 0, 0, 0, 0, 1.338, 0, 0, 0, 0, 1, 0, 604.077, 0, 0, 1); transform: matrix3d(0.763, 0, 0, 0, 0, 1.338, 0, 0, 0, 0, 1, 0, 604.077, 0, 0, 1); }
+   1.99% { -webkit-transform: matrix3d(0.856, 0, 0, 0, 0, 1.211, 0, 0, 0, 0, 1, 0, 575.746, 0, 0, 1); transform: matrix3d(0.856, 0, 0, 0, 0, 1.211, 0, 0, 0, 0, 1, 0, 575.746, 0, 0, 1); }
+   2.23% { -webkit-transform: matrix3d(0.923, 0, 0, 0, 0, 1.114, 0, 0, 0, 0, 1, 0, 550.942, 0, 0, 1); transform: matrix3d(0.923, 0, 0, 0, 0, 1.114, 0, 0, 0, 0, 1, 0, 550.942, 0, 0, 1); }
+   2.73% { -webkit-transform: matrix3d(1.009, 0, 0, 0, 0, 0.987, 0, 0, 0, 0, 1, 0, 498.939, 0, 0, 1); transform: matrix3d(1.009, 0, 0, 0, 0, 0.987, 0, 0, 0, 0, 1, 0, 498.939, 0, 0, 1); }
+   2.74% { -webkit-transform: matrix3d(1.01, 0, 0, 0, 0, 0.986, 0, 0, 0, 0, 1, 0, 497.692, 0, 0, 1); transform: matrix3d(1.01, 0, 0, 0, 0, 0.986, 0, 0, 0, 0, 1, 0, 497.692, 0, 0, 1); }
+   3.23% { -webkit-transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 449.942, 0, 0, 1); transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 449.942, 0, 0, 1); }
+   3.3% { -webkit-transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 443.082, 0, 0, 1); transform: matrix3d(1.029, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 443.082, 0, 0, 1); }
+   4.2% { -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 360.581, 0, 0, 1); transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 360.581, 0, 0, 1); }
+   4.23% { -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 358.385, 0, 0, 1); transform: matrix3d(1.007, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 358.385, 0, 0, 1); }
+   5.23% { -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 277.146, 0, 0, 1); transform: matrix3d(0.998, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 277.146, 0, 0, 1); }
+   7.23% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 146.322, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 146.322, 0, 0, 1); }
+   8.31% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 92.714, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 92.714, 0, 0, 1); }
+   8.65% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 77.951, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 77.951, 0, 0, 1); }
+   12.51% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.722, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -25.722, 0, 0, 1); }
+   16.62% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -50.644, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -50.644, 0, 0, 1); }
+   27.73% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10.279, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10.279, 0, 0, 1); }
+   38.84% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.028, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.028, 0, 0, 1); }
+   61.06% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.081, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.081, 0, 0, 1); }
+   83.28% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.003, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.003, 0, 0, 1); }
+   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+ }
+
+	</style>
+	<center>
+		<h1 style="font-family: Courier"><font color="blue">A detailed analysis of the modern day pancake</font></h1>
+		<hr>
+		<div class="body">
+		<div class="my_text" style="background-color: #89cff0;">
+			<center>
+				<div class="animation-target">
+</div>
+<img id="flyingpancake" src="https://png.icons8.com/color/1600/pancake.png" >
+<img id="flyingpancake2" src="https://png.icons8.com/color/1600/pancake.png" >
+				<br> <br> <br>
+				<h2>Hi!<br>
+				I got bored<br>
+				This is a website about pancakes<br>
+				Hopefully you will learn something new about pancakes (or just play some pancake games, that's fine too)! <br>
+				Enjoy!</h2>
+				<br> <br> <br> <br>
+			</center>
+			<div style="background-color:#FFFFFF">
+				<h2><u>Did you know</u></h2>
+				<h2>The Romans were the first to make an early version of the modern day pancake using flour, milk, <br> eggs, and spices. They used honey instead of syrup to flavor them. The Ancient Greeks and the <br> Elizabethans also ate pancakes <br></h2>
+			</div>
+			<center>
+				<img height="400" id="image1" src="https://i.pinimg.com/736x/1b/7a/af/1b7aaf16efbaf1207419ab554ddfc5a2--pancakes-quotes-breakfast-quotes-morning.jpg" width="500">
+			</center>
+			<center>
+				<button class="button" id="mybtn" onclick="pancake1();" type="button">Click for more pancakes!</button>
+			</center><br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<center>
+				<h2>What is your favorite pancake?</h2>
+			<h2> Note: Please hit the submit button instead of <br> the enter key on your keyboard. </h2>
+			</center>
+			<form>
+				<center>
+					<input id = "reply" name="flavor" type="text">
+				</center><br>
+				<center>
+					<h2 id ="like"> Yay! I also like <span id="flavor"></span> </h2>
+					<!-- <h2 id="flavor"> none </h2> -->
+					<h2 id ="dislike"> No I don't like that flavor. I only like blueberry pancakes... </h2>
+				<button class="button" type="button" id="mybtn" onclick="pancake2();">Submit</button> <br>
+				</center>
+			</form><br>
+			<br>
+			<div style="background-color:#FFFFFF">
+				<br>
+				<h2> If you're hungry from looking at all of these pancakes: </h2>
+				<h2><u>Simple pancake recipe</u></h2>
+				<h2>1 cup of flour<br>
+				2 tablespoons of white sugar<br>
+				2 teaspoons of baking powder<br>
+				1 teaspoon of salt<br>
+				1 beaten egg<br>
+				1 cup of milk<br>
+				2 tablespoons of vegetable oil<br>
+				Mix everything together and pour it on to a pan and flip after a while (more specific instructions
+				<a href="https://www.allrecipes.com/recipe/45396/easy-pancakes/">here</a>)</h2>
+				<h3>(Or you could just buy some pancake mix...)</h3>
+				<br>
+			</div>
+			<br> <br>
+			<font size = 200%><h1> Pancake games </h1></font>
+			<center>
+				<h2> Note: These games work best on computers </h2>
+				<button class="button" id="mybtn" onclick="location.href='http://www.wpi.edu/~imitsiades/index2.html'"></a type="button">Click the syrup</button> <br> <br> <br> <br>
+				<button class="button" id="mybtn" onclick="location.href='http://www.wpi.edu/~imitsiades/index3.html'"></a type="button">Make a pancake</button> <br> <br> <br> <br>
+				<button class="button" id="mybtn" onclick="location.href='http://www.wpi.edu/~imitsiades/index4.html'"></a type="button">Play around with some pancake mix</button>
+			</center><br>
+			<br>
+			<br>
+			<br>
+			<div id="container">
+				<div class="a"><img class="a" src="http://www.recipe4living.com/assets/itemimages/400/400/3/default_f03f28e1466ce85beb570232252f152a_dreamstimesmall_56495123.jpg"></div>
+				<div class='b'><img class="b" src="https://www.pancakehouse.com.ph/assets/images/products/thumbs/small_soldiers_classic_360x226.jpg"></div>
+				<div class='c'><img class="c" src="https://dinnerthendessert.com/wp-content/uploads/2016/08/Mini-Pancakes-2-680x453.jpg"></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		 	var count = 0;
+		  var MAX_PANCAKES = 8;
+
+		           function pancake2() {
+								 var fav = document.getElementById("reply").value;
+								 if (fav == "Blueberry" || fav == "blueberry") {
+									 document.getElementById("like").style.visibility = "visible";
+									 document.getElementById("dislike").style.visibility = "hidden";
+									 document.getElementById("flavor").style.visibility = "visible";
+									 document.getElementById("flavor").innerHTML= fav;
+								 } else {
+									document.getElementById("like").style.visibility = "hidden";
+									document.getElementById("flavor").style.visibility = "hidden"
+									document.getElementById("dislike").style.visibility = "visible";
+								 }
+
+		          }
+		              function pancake1() {
+		                 var elem = document.getElementById("image1");
+		                 if (count == 0) {
+		                    elem.src = "https://i1.wp.com/cafedelites.com/wp-content/uploads/2017/12/PERFECT-Best-Fluffy-Pancakes-IMAGE-107.jpg?fit=1560%2C2340&ssl=1" ;
+		                      count += 1;
+		                  } else if (count == 1) {
+		                      elem.src = "http://i.huffpost.com/gen/1170724/images/o-BEST-PANCAKE-RECIPE-facebook.jpg";
+		                      count += 1;
+		                  } else if (count == 2) {
+		                      elem.src = "https://static01.nyt.com/images/2017/03/24/dining/24COOKING-CLASSICPANCAKES/24COOKING-CLASSICPANCAKES-videoSixteenByNineJumbo1600.jpg";
+		                      count += 1;
+		                  } else if (count == 3) {
+		                      elem.src = "http://www.leger.co.uk/blog/wp-content/uploads/2015/02/iStock_000008248793_Large.jpg";
+		                      count += 1;
+		                  } else if (count == 4) {
+		                      elem.src = "https://d3awvtnmmsvyot.cloudfront.net/api/file/X4BHoPoBTUObnLFTrhlC/convert?fit=max&w=1450&quality=60&cache=true&rotate=exif&compress=true";
+		                      count += 1;
+		                  } else if (count == 5) {
+		                      elem.src = "https://i.ytimg.com/vi/7ebZWviUfUA/maxresdefault.jpg";
+		                      count += 1;
+		                  } else if (count == 6) {
+		                      elem.src = "https://media.eggs.ca/assets/RecipePhotos/_resampled/FillWyIxMjgwIiwiNjIwIl0/Fluffy-Pancakes-New-CMS.jpg";
+		                      count += 1;
+		                  } else if (count == 7) {
+		                      elem.src = "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/13/22/63/D30C2lxTy6SAflQlb61Q_VP%204%20-%20final_2.jpg";
+		                      count += 1;
+		                  }
+		                  if (count >= MAX_PANCAKES) {
+		                      count = 0;
+		                  };
+		              }
+		              $(document).ready(function() {
+		              animateDiv($('.a'));
+		              animateDiv($('.b'));
+		              animateDiv($('.c'));
+
+		            });
+
+		            function makeNewPosition($container) {
+
+		              var nh = Math.floor(Math.random() * 1500);
+		              var nw = Math.floor(Math.random() * 1500);
+
+		              return [nh, nw];
+
+		            }
+
+		            function animateDiv($target) {
+		              var newq = makeNewPosition($target.parent());
+		              var oldq = $target.offset();
+		              var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+		              $target.animate({
+		                top: newq[0],
+		                left: newq[1]
+		              }, speed, function() {
+		                animateDiv($target);
+		              });
+
+		            }
+
+		            function calcSpeed(prev, next) {
+
+		              var x = Math.abs(prev[1] - next[1]);
+		              var y = Math.abs(prev[0] - next[0]);
+
+		              var greatest = x > y ? x : y;
+
+		              var speedModifier = 0.1;
+
+		              var speed = Math.ceil(greatest / speedModifier);
+
+		              return speed;
+
+		            }
+
+
+		</script>
+</body>
+</html>
